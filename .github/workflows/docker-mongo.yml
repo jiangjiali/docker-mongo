@@ -1,0 +1,28 @@
+name: DockerImageCI
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'tag name'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: 构建Docker镜像
+      run: |
+        docker login --username=${{ secrets.DOCKER_HUB_USER }} --password=${{ secrets.DOCKER_HUB_PWD }}
+        docker build --no-cache -t jiangjiali/mongo:${{ github.event.inputs.tag_name }} .
+        docker push jiangjiali/mongo:${{ github.event.inputs.tag_name }}
+        docker save -o mongo-${{ github.event.inputs.tag_name }}.tar jiangjiali/mongo:${{ github.event.inputs.tag_name }}
+
+    - name: 上载文件
+      uses: actions/upload-artifact@v4
+      with:
+        name: mongo
+        path: |
+          mongo-${{ github.event.inputs.tag_name }}.tar

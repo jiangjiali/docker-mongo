@@ -12,7 +12,7 @@ ENV GOSU_VERSION=1.17 \
 # mongo 大版本号
 	MONGO_MAJOR=6.0 \
 # mongo 版本号
-	MONGO_VERSION=${MONGO_MAJOR}.15 \
+	MONGO_VERSION=6.0.15 \
 # mongo 包前缀
 	MONGO_PACKAGE=${MONGO_PACKAGE} \
 # mongo 包地址

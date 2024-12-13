@@ -1,4 +1,4 @@
-name: DockerImageCI
+name: 构建包
 
 on:
   workflow_dispatch:

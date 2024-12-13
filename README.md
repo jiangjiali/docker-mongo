@@ -3,7 +3,7 @@ Mongo v6.0.9
 
 | 镜像名                  | Status        |
 | ----------------------- |:-------------:|
-| jiangjiali/mongo v6.0.9 | ![CI (Linux)](https://github.com/jiangjiali/docker-mongo/workflows/DockerImageCI/badge.svg) |
+| jiangjiali/mongo v6.0.19 | ![CI (Linux)](https://github.com/jiangjiali/docker-mongo/workflows/DockerImageCI/badge.svg) |
 
 ## 添加权限
 git update-index --chmod=+x docker-entrypoint.sh
